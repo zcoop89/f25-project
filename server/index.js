@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cors());
 
 // SEED FUNCTION
-app.post("/seed", seed);
+app.post("/seed", seed, getPlayers, choosePlayer, deletePlayer);
 
 // GET ALL PLAYERS
 // UPDATE PLAYER

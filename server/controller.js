@@ -22,13 +22,21 @@ module.exports = {
 
   // UPDATE -- PUT
   choosePlayer(req, res) {
-    const {  } = req.body;
-    sequelize.query();
+    const { players, ppg, is_selected, position_id } = req.body;
+    sequelize
+      .query(
+        `insert into players (players, ppg, is_selected, position_id)
+    values ('${players}', ${ppg}, ${is_selected}, ${position_id});`
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((err) => console.log(err));
   },
 
   // DELETE
   deletePlayer(req, res) {
-    sequelize.query();
+    const { id } = req.params;
+    sequelize.query(`delete from player where player_id = ${id}`)
+    
   },
 
   seed: (req, res) => {
