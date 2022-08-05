@@ -28,32 +28,50 @@
     <div class="positions-container">
       <div class="position">
         <div class="position-title">Point Guard</div>
-        <div id="point-guard">
+        <div id="point-guard"></div>
+        <div class="column-total">
+          <div>PPG:</div>
+          <div id="point-guard-total">0</div>
         </div>
       </div>
       <div class="position">
         <div class="position-title">Shooting Guard</div>
-        <div id="shooting-guard">
+        <div id="shooting-guard"></div>
+        <div class="column-total">
+          <div>PPG:</div>
+          <div id="shooting-guard-total">0</div>
         </div>
       </div>
       <div class="position">
         <div class="position-title">Small Forward</div>
-        <div id="small-forward">
+        <div id="small-forward"></div>
+        <div class="column-total">
+          <div>PPG:</div>
+          <div id="small-forward-total">0</div>
         </div>
       </div>
       <div class="position">
         <div class="position-title">Power Fowrard</div>
-        <div id="power-forward">
+        <div id="power-forward"></div>
+        <div class="column-total">
+          <div>PPG:</div>
+          <div id="power-forward-total">0</div>
         </div>
       </div>
       <div class="position">
         <div class="position-title">Center</div>
-        <div id="center">
+        <div id="center"></div>
+        <div class="column-total">
+          <div>PPG:</div>
+          <div id="center-total">0</div>
         </div>
       </div>
     </div>
-    <div class="submit-container">
-      <button class="submit">Create Team</button>
+    <div class="total-points-container">
+      Team PPG:
+      <h3 id="total-points-per-game">0</h3>
     </div>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

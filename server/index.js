@@ -4,25 +4,20 @@ const dotenv = require("dotenv");
 dotenv.config({
   path: path.resolve(__dirname, "../.env"),
 });
+const { SERVER_PORT } = process.env;
 const express = require("express");
 const app = express();
-const cors = require("cors");
-const { SERVER_PORT } = process.env;
-
-const {
-  seed,
-  getPlayers,
-  choosePlayer,
-  deletePlayer,
-} = require("./controller.js");
 app.use(express.json());
+const cors = require("cors");
 app.use(cors());
 
-// SEED FUNCTION
-app.post("/seed", seed, getPlayers, choosePlayer, deletePlayer);
+const { seed, getPlayers, choosePlayer } = require("./controller.js");
 
+// SEED FUNCTION
+app.post("/api/seed", seed);
 // GET ALL PLAYERS
-// UPDATE PLAYER
-// DELETE PLAYER FROM TEAM
+app.get("/api/players", getPlayers);
+// CHOOSE PLAYER FOR TEAM
+app.put("/api/players", choosePlayer);
 
 app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`));
